@@ -22,7 +22,7 @@ Users can manage their inventory, create purchase orders, and track product avai
 7. Kindly provide all the requested information, which will be persisted in the database.
 
 # Features of the applications
-1. A Pipfile containing all needed dependencies and no unneeded dependencies. -
+1. A Pipfile containing all needed dependencies and no unneeded dependencies.
 2. Utilizes 2 external libraries - SQLachemy and Alembic
 3. Uses SQLAlchemy ORM to create 3 tables: Products, Suppliers and Orders
 4. Uses Alembic to manage migrations
