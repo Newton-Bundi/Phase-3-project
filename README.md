@@ -20,4 +20,3 @@ Users can manage their inventory, create purchase orders, and track product avai
      - View orders
      - Exit
 7. Kindly provide all the requested information, which will be persisted in the database.
-
