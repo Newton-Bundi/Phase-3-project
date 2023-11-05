@@ -26,10 +26,8 @@ while True:
         view_products()
 
     elif choice == '3':
-        name = input("Supplier Name: ")
-        contact_info = input("Contact Information: ")
-        add_supplier(name, contact_info)
-
+        add_supplier()
+        
     elif choice == '4':
         view_suppliers()
 

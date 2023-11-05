@@ -1,10 +1,7 @@
-#!/usr/bin/env python3
-
 # Import necessary libraries
 from sqlalchemy import create_engine, Column, Integer, String, Date, ForeignKey
 from sqlalchemy.orm import relationship, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-from datetime import datetime
 
 # Create the SQLite database and engine
 engine = create_engine('sqlite:///inventory.db')
@@ -22,6 +19,9 @@ class Product(Base):
     supplier_id = Column(Integer, ForeignKey('suppliers.id'))
     supplier = relationship('Supplier', back_populates='products')
 
+    def __repr__(self):
+        return f"Product(name='{self.name}', price=${self.price}, supplier='{self.supplier.name}'"
+
 class Supplier(Base):
     __tablename__ = 'suppliers'
 
@@ -29,6 +29,9 @@ class Supplier(Base):
     name = Column(String, nullable=False)
     contact_info = Column(String)
     products = relationship('Product', back_populates='supplier')
+
+    def __repr__(self):
+        return f"Supplier(name='{self.name}', contact_info='{self.contact_info}'"
 
 class Order(Base):
     __tablename__ = 'orders'

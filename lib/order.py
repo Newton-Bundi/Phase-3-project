@@ -1,4 +1,5 @@
-from models import session, Order, datetime
+from models import session, Order
+from datetime import datetime
 
 # Order Management
 def create_order(product_id, quantity):

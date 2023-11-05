@@ -1,4 +1,6 @@
 from models import session, Product
+from sqlalchemy.orm import joinedload
+
 
 # Product Management
 def add_product(name, description, price,quantity,supplier_id):
@@ -8,5 +10,6 @@ def add_product(name, description, price,quantity,supplier_id):
 
 def view_products():
     products = session.query(Product).all()
+
     for product in products:
-        print(f"{product.id}: {product.name} - ${product.price} - Quantity: {product.quantity} - Supplier: {product.supplier_id}")
+        print(f"{product.id}: {product.name} - ${product.price} - Quantity: {product.quantity} - Supplier ID: {product.supplier_id} - Supplier:{product.supplier}")
